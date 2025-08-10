@@ -1,8 +1,13 @@
+"""
+SmartStart RAG Chatbot - Main Entry Point
+This file serves as the main entry point for Streamlit deployment.
+"""
+
 import streamlit as st
-from rag_chain import get_qa_chain
-from llm_setup import get_llm
-from load_vectrostore import load_vectorstore
-from embedding_model import get_embedding_model
+from smartstart_streamlit.rag_chain import get_qa_chain
+from smartstart_streamlit.llm_setup import get_llm
+from smartstart_streamlit.load_vectrostore import load_vectorstore
+from smartstart_streamlit.embedding_model import get_embedding_model
 import time
 from PIL import Image
 import base64
@@ -11,7 +16,7 @@ from streamlit_lottie  import st_lottie, st_lottie_spinner
 import json
 
 # --- Page Configuration ---
-favicon = Image.open("smartstart-streamlit/images/icon.png")
+favicon = Image.open("smartstart_streamlit/images/icon.png")
 st.set_page_config(
     page_title="SmartStart ChatBot",
     layout="wide",
@@ -119,14 +124,14 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # --- Load logo as Base64 ---
-logo = Image.open("smartstart-streamlit/images/logo-purple.png")
+logo = Image.open("smartstart_streamlit/images/logo-purple.png")
 buffered = BytesIO()
 logo.save(buffered, format="PNG")
 logo_base64 = base64.b64encode(buffered.getvalue()).decode()
 
 
 #Load a lottie animation from local file
-with open("smartstart-streamlit/animations/animation.json", "r", encoding= "utf-8") as f:
+with open("smartstart_streamlit/animations/animation.json", "r", encoding= "utf-8") as f:
     lottie_animation = json.load(f) 
 
 
@@ -161,7 +166,7 @@ with col3:
 # --- Input Section ---
 st.markdown('<div class="input-label">Your Question:</div>', unsafe_allow_html=True)
 with st.form(key="query_form", clear_on_submit=True):
-    query = st.text_input("", placeholder="e.g. Ask me anything about SmartStart?", key="user_query")
+    query = st.text_input("Question", placeholder="e.g. Ask me anything about SmartStart?", key="user_query", label_visibility="collapsed")
     submitted = st.form_submit_button("Submit")
 
 # --- Load Models and Vectorstore ---

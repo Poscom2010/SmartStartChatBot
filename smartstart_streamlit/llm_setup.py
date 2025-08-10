@@ -1,4 +1,4 @@
-from langchain.llms import Together
+from langchain_community.llms import Together
 import os
 from dotenv import load_dotenv
 
