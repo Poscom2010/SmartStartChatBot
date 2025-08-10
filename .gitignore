@@ -1,0 +1,13 @@
+# Created by venv; see https://docs.python.org/3/library/venv.html
+
+# Ignore virtual environment folder
+env/
+
+# But do NOT ignore these folders/files (unignore)
+!smartstart-streamlit/
+!load_and_chunk.ipynb
+!requirements.txt
+!README.md
+!LICENSE
+!.gitignore
+
