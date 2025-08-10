@@ -1,4 +1,4 @@
-from langchain.vectorstores import FAISS
+from langchain_community.vectorstores import FAISS
 
 def load_vectorstore(embeddings):
     return FAISS.load_local(
