@@ -126,7 +126,7 @@ logo_base64 = base64.b64encode(buffered.getvalue()).decode()
 
 
 #Load a lottie animation from local file
-with open("animations/animation.json", "r", encoding= "utf-8") as f:
+with open("smartstart-streamlit/animations/animation.json", "r", encoding= "utf-8") as f:
     lottie_animation = json.load(f) 
 
 
