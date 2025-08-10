@@ -11,7 +11,7 @@ from streamlit_lottie  import st_lottie, st_lottie_spinner
 import json
 
 # --- Page Configuration ---
-favicon = Image.open("images/icon.png")
+favicon = Image.open("smartstart-streamlit/images/icon.png")
 st.set_page_config(
     page_title="SmartStart ChatBot",
     layout="wide",
@@ -119,7 +119,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # --- Load logo as Base64 ---
-logo = Image.open("images/logo-purple.png")
+logo = Image.open("smartstart-streamlit/images/logo-purple.png")
 buffered = BytesIO()
 logo.save(buffered, format="PNG")
 logo_base64 = base64.b64encode(buffered.getvalue()).decode()
