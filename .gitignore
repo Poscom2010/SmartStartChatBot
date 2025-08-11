@@ -45,6 +45,10 @@ Thumbs.db
 .ipynb_checkpoints/
 *.ipynb
 
+#extra files
+DEPLOYMENT_CHECKLIST.md
+CHECKLIST.md
+
 # Streamlit
 .streamlit/secrets.toml
 
