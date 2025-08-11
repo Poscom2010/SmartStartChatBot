@@ -75,7 +75,7 @@ st.markdown("""
             border: 2px solid #e0e0e0;
             padding: 12px 15px;
             font-size: 16px;
-            color: black;
+            color: red;
         }
 
         .answer-box {
