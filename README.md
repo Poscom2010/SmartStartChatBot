@@ -8,7 +8,7 @@ A powerful RAG (Retrieval-Augmented Generation) chatbot built with Streamlit and
 
 1. **Fork/Clone this repository**
 2. **Connect to [Streamlit Cloud](https://streamlit.io/cloud)**
-3. **Set main file path to: `main.py`**
+3. **Set main file path to: `streamlit_main.py`**
 
 ## 🔧 Setup Requirements
 
@@ -66,9 +66,7 @@ pip install -r requirements.txt
 streamlit run main.py
 ```
 
-## 🔑 API Keys
 
-- **Together AI**: Get your API key from [Together AI](https://together.ai/)
 - **Streamlit Secrets**: Add your API key in Streamlit Cloud settings
 
 ## 📝 Notes
@@ -80,7 +78,7 @@ streamlit run main.py
 ## 🚨 Troubleshooting
 
 If you get deployment errors:
-1. Check that `main.py` is set as the main file in Streamlit
+1. Check that `streamlit_main.py` is set as the main file in Streamlit
 2. Verify your `TOGETHER_API_KEY` is set in Streamlit secrets
 3. Ensure all files are properly committed to GitHub
 
