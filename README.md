@@ -2,6 +2,9 @@
 
 A powerful RAG (Retrieval-Augmented Generation) chatbot built with Streamlit and LangChain that answers questions about SmartStart using AI.
 
+# Smartstart Rag Bot in Action
+
+![SmartStart Bot](https://github.com/Poscom2010/SmartStartChatBot/blob/main/smartstart_streamlit/images/Smartstart%20Rag%20pic.png)
 ## 🚀 Quick Deploy on Streamlit
 
 **Deploy this app in 3 simple steps:**
