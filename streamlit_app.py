@@ -17,11 +17,13 @@ import json
 import os
 
 # --- Page Configuration ---
+favicon = Image.open("smartstart_streamlit/images/icon.png")
 st.set_page_config(
     page_title="SmartStart ChatBot",
     layout="wide",
-    page_icon="🤖"
+    page_icon=favicon
 )
+                        
 
 # --- Custom CSS Styling (Black background) ---
 st.markdown("""
@@ -73,7 +75,7 @@ st.markdown("""
             border: 2px solid #e0e0e0;
             padding: 12px 15px;
             font-size: 16px;
-            color: black;
+            color: white;
         }
 
         .answer-box {
