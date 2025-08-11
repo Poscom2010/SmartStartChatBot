@@ -176,7 +176,7 @@ def main():
             submitted = st.form_submit_button("Submit")
 
         # --- Load Models and Vectorstore ---
-        with st.spinner("🔄 Loading AI models..."):
+        with st.spinner("🔄 Loading Smartstart Bot..."):
             embeddings = get_embedding_model()
             llm = get_llm()
             vectorstore = load_vectorstore(embeddings)
@@ -185,7 +185,7 @@ def main():
 
         # --- Output ---
         if submitted and query.strip() != "":
-            with st.spinner("🤖 Thinking..."):
+            with st.spinner("🤖 HGive me a sec..."):
                 time.sleep(1.5)
                 result = qa_chain(query)
                 answer = result["result"]
