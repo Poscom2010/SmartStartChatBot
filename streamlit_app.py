@@ -75,7 +75,7 @@ st.markdown("""
             border: 2px solid #e0e0e0;
             padding: 12px 15px;
             font-size: 16px;
-            color: red;
+            color: white;
         }
 
         .answer-box {
@@ -185,7 +185,7 @@ def main():
 
         # --- Output ---
         if submitted and query.strip() != "":
-            with st.spinner("🤖 HGive me a sec..."):
+            with st.spinner("🤖 Give me a sec..."):
                 time.sleep(1.5)
                 result = qa_chain(query)
                 answer = result["result"]
