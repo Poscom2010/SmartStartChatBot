@@ -209,10 +209,26 @@ def main():
         
         # --- Footer ---
         st.markdown("""
-            <div class="custom-footer">
-                &copy; 2025 SmartStart | Built by Pedzisai
-            </div>
-        """, unsafe_allow_html=True)
+<!-- Font Awesome CDN for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<hr style="border:1px solid #ccc"/>
+
+<div style="text-align: center; font-family: 'Arial', sans-serif; color: #555; margin-top: 20px;">
+    ❤️ Developed by <strong>Pedzisai</strong> &nbsp;|&nbsp;
+    <a href="https://github.com/Poscom2010" target="_blank" style="text-decoration:none; color:#555; margin:0 10px;">
+        <i class="fab fa-github"></i> GitHub
+    </a>
+    <a href="www.linkedin.com/in/pedzisaiposeniportfolio" target="_blank" style="text-decoration:none; color:#555; margin:0 10px;">
+        <i class="fab fa-linkedin"></i> LinkedIn
+    </a>
+    <a href="https://poscom2010.github.io/" target="_blank" style="text-decoration:none; color:#555; margin:0 10px;">
+        <i class="fas fa-globe"></i> Portfolio
+    </a>
+    <br>
+    &copy; 2025 Pedzisai. All rights reserved.
+</div>
+""", unsafe_allow_html=True)
 
     except Exception as e:
         st.error(f"❌ An error occurred: {str(e)}")
