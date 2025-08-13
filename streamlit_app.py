@@ -125,11 +125,14 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 def main():
-    # Check if API key is available
-    if not os.getenv("TOGETHER_API_KEY"):
-        st.error("⚠️ TOGETHER_API_KEY environment variable is not set. Please set it in your Streamlit secrets or environment variables.")
-        st.info("To set the API key in Streamlit Cloud:\n1. Go to your app settings\n2. Add a secret with key 'TOGETHER_API_KEY' and your Together AI API key as value")
-        return
+    # Try Streamlit secrets first, then .env
+    api_key = st.secrets.get("TOGETHER_API_KEY", os.getenv("TOGETHER_API_KEY"))
+    
+    if not api_key:
+        st.error("🚧 The app works 100%😃. Currently its offline. The developer has intentionally disabled the API keys.")
+        st.info("Please check back later or alert them.")
+        st.stop()
+   
 
     try:
         # Load logo and animation
@@ -190,15 +193,24 @@ def main():
                 result = qa_chain(query)
                 answer = result["result"]
 
+
+            # Show the user's question
             st.markdown(
-                f'<div class="answer-container"><div class="answer-box">✅ <strong>Answer:</strong><br>{answer}</div></div>', 
+                f'<div class="answer-container"><div class="answer-box"><strong>Your Question:</strong> {query}</div></div>', 
                 unsafe_allow_html=True
             )
 
+            # Show the bot's answer
+            st.markdown(
+                f'<div class="answer-container"><div class="answer-box">✅ <strong>Bot:</strong><br>{answer}</div></div>', 
+                unsafe_allow_html=True
+            )
+
+        
         # --- Footer ---
         st.markdown("""
             <div class="custom-footer">
-                &copy; 2025 SmartStart | Built by Poscom with ❤️ using Streamlit, LangChain 
+                &copy; 2025 SmartStart | Built by Pedzisai
             </div>
         """, unsafe_allow_html=True)
 
