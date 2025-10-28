@@ -16,17 +16,23 @@ if _PDBaseModel is not None:
     _orig_setstate = getattr(_PDBaseModel, "__setstate__", None)
 
     def _compat_setstate(self, state):
-        if isinstance(state, dict) and "__fields_set__" not in state and "fields_set" in state:
-            state = dict(state)
-            state["__fields_set__"] = state.pop("fields_set")
+        if isinstance(state, dict):
+            new_state = dict(state)
+            if "__fields_set__" not in new_state:
+                fields = new_state.pop("fields_set", None)
+                new_state["__fields_set__"] = fields if fields is not None else set()
+            if _orig_setstate is not None:
+                return _orig_setstate(self, new_state)
+            # Fallback: assign state directly if no original method
+            for k, v in new_state.items():
+                try:
+                    setattr(self, k, v)
+                except Exception:
+                    pass
+            return
+        # Non-dict state: just forward to original if present, else ignore
         if _orig_setstate is not None:
             return _orig_setstate(self, state)
-        # Fallback: assign state directly if no original method
-        for k, v in state.items():
-            try:
-                setattr(self, k, v)
-            except Exception:
-                pass
 
     try:
         _PDBaseModel.__setstate__ = _compat_setstate  # type: ignore[attr-defined]
