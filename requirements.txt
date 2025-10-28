@@ -14,3 +14,7 @@ numpy>=1.24.0
 requests>=2.31.0
 huggingface-hub>=0.19.0
 accelerate>=0.24.0
+# Pin pydantic to v1 to avoid 'fields_set' errors from some community integrations
+pydantic<2
+# Pin together SDK to a stable version compatible with langchain-community Together LLM
+together==0.2.12
