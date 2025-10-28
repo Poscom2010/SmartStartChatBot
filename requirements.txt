@@ -1,6 +1,7 @@
 streamlit>=1.47.0
-langchain>=0.3.0
-langchain-community>=0.3.0
+# Pin to versions where `langchain.chains.RetrievalQA` still exists
+langchain==0.2.16
+langchain-community==0.2.16
 faiss-cpu>=1.11.0
 sentence-transformers>=2.2.0
 together>=0.2.0
