@@ -231,7 +231,10 @@ def main():
 """, unsafe_allow_html=True)
 
     except Exception as e:
-        st.error(f"❌ An error occurred: {str(e)}")
+        import traceback
+        st.error(f"❌ An error occurred: {e!r}")
+        st.exception(e)
+        st.code("\n".join(traceback.format_exc().splitlines()[-25:]))
         st.info("Please check your configuration and try again.")
 
 if __name__ == "__main__":
