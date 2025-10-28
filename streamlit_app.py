@@ -222,7 +222,7 @@ def main():
     <a href="www.linkedin.com/in/pedzisaiposeniportfolio" target="_blank" style="text-decoration:none; color:#555; margin:0 10px;">
         <i class="fab fa-linkedin"></i> LinkedIn
     </a>
-    <a href="https://poscom2010.github.io/" target="_blank" style="text-decoration:none; color:#555; margin:0 10px;">
+    <a href="https://pedzisaiportfolio.vercel.app/" target="_blank" style="text-decoration:none; color:#555; margin:0 10px;">
         <i class="fas fa-globe"></i> Portfolio
     </a>
     <br>
