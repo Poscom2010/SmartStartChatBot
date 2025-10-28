@@ -18,8 +18,8 @@ Pillow==10.3.0
 numpy==1.26.4
 requests>=2.31.0
 
-# Pydantic v1 to prevent 'fields_set' runtime errors
-pydantic<2
+# LangChain 0.2.x uses Pydantic v2
+pydantic>=2,<3
 
-# Together SDK compatible with community integration
-together==0.2.12
+# Together SDK version available on PyPI and compatible with langchain_community
+together==1.3.12
